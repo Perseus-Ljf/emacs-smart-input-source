@@ -49,7 +49,7 @@ Should accept a string which is the id of the input source.")
   "Input source for english.")
 
 (defvar sis-other-pattern
-  "[\u4E00-\u9FFF\u3400-\u4DBF\u3000-\u303F\uFF00-\uFFEF]"
+  "[\u4E00-\u9FFF\u3400-\u4DBF\u3000-\u303F\uFF00-\uFFEF\u3040-\u309F\u30A0-\u30FF]"
   "Pattern to identify a character as other lang.
 
 Default value is CJK characters and punctuations.")
