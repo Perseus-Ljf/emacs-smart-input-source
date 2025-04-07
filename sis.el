@@ -1022,9 +1022,7 @@ Possible values: \\='normal, \\='prefix, \\='sequence.")
                 #'sis--do-nothing-advice)
     (advice-add 'ad-Advice-toggle-input-method :override
                 #'sis--original-advice)
-    (when sis-respect-evil-normal-escape
-      (define-key evil-normal-state-map
-                  (kbd "<escape>") #'sis-set-english))))
+    ))
 
 ;;;###autoload
 (define-minor-mode sis-global-respect-mode
@@ -1093,8 +1091,7 @@ Possible values: \\='normal, \\='prefix, \\='sequence.")
       (advice-remove 'evil-activate-input-method #'sis--do-nothing-advice)
       (advice-remove 'evil-deactivate-input-method #'sis--do-nothing-advice)
       (advice-remove 'ad-Advice-toggle-input-method #'sis--original-advice)
-      (when sis-respect-evil-normal-escape
-        (define-key evil-normal-state-map (kbd "<escape>") nil)))
+      )
 
     ;; preserve buffer input source
     (remove-hook 'pre-command-hook #'sis--respect-pre-command-handler)
